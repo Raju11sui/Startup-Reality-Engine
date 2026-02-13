@@ -53,6 +53,32 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ results, onNewSimulati
         return () => clearInterval(timer);
     }, [results.survivalOdds]);
 
+    const handleShare = async () => {
+        const shareData = {
+            title: 'Startup Reality Engine Results',
+            text: `My startup has a ${results.survivalOdds}% survival probability! Check yours at Startup Reality Engine.`,
+            url: window.location.href,
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback: copy to clipboard
+                await navigator.clipboard.writeText(
+                    `${shareData.text}\n${shareData.url}`
+                );
+                alert('Results copied to clipboard!');
+            }
+        } catch (err) {
+            console.error('Error sharing:', err);
+        }
+    };
+
+    const handleCompare = () => {
+        alert('Compare feature coming soon! Save this result and run another simulation to compare.');
+    };
+
     const getRiskColor = () => {
         if (results.survivalOdds < 30) return 'var(--danger)';
         if (results.survivalOdds < 50) return 'var(--warning)';
@@ -254,11 +280,11 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ results, onNewSimulati
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 2.4 }}
                     >
-                        <button className="btn btn-secondary btn-large">
+                        <button className="btn btn-secondary btn-large" onClick={handleShare}>
                             <Share2 size={20} />
                             Share Result
                         </button>
-                        <button className="btn btn-secondary btn-large">
+                        <button className="btn btn-secondary btn-large" onClick={handleCompare}>
                             <GitCompare size={20} />
                             Compare Startups
                         </button>
