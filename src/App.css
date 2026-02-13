@@ -1,0 +1,14 @@
+/* App-specific styles */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 3rem 0 2rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(to bottom, transparent, var(--bg-deep));
+}
