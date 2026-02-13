@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
 WEBSITE PREVIEW : https://startup-reality-engine.vercel.app/
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
