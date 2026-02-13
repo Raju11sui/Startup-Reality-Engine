@@ -83,7 +83,7 @@ Professional. Analytical. Honest.
 End evaluation cleanly.
 `;
 
-export const generateEvaluationPrompt = (data: any) => `
+export const generateEvaluationPrompt = (_data: any) => `
 ---------------------------------------------------
 USER INPUT DATA
 ---------------------------------------------------

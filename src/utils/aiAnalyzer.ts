@@ -29,7 +29,6 @@ function generateDataHash(data: StartupData): string {
 
 // Parse AI response into structured format
 function parseAIResponse(aiText: string) {
-    const lines = aiText.split('\n').filter(line => line.trim());
 
     const extractValue = (pattern: RegExp, defaultValue: any = '') => {
         const match = aiText.match(pattern);

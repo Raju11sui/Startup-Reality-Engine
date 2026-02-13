@@ -14,7 +14,7 @@ const TOTAL_STEPS = 4;
 export const MultiStepForm: React.FC<MultiStepFormProps> = ({
     initialData,
     onSubmit,
-    onCancel,
+    onCancel: _onCancel,
 }) => {
     const [step, setStep] = useState(1);
     const [data, setData] = useState<StartupData>(initialData);

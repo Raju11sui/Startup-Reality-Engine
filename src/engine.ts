@@ -1,4 +1,4 @@
-import { gemini20Flash, googleAI } from '@genkit-ai/google-genai';
+import { googleAI, gemini20Flash } from '@genkit-ai/google-genai';
 import { genkit, z } from 'genkit';
 import { EVALUATION_SYSTEM_PROMPT, generateEvaluationPrompt } from './engine/prompts';
 

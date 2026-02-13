@@ -4,10 +4,9 @@ import {
     AlertTriangle,
     TrendingDown,
     Layers,
-    Clock,
     CheckCircle2,
-    XCircle,
-    Lightbulb
+    Lightbulb,
+    ShieldAlert
 } from 'lucide-react';
 
 interface ResultsProps {
